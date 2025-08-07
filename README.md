@@ -1,4 +1,6 @@
-# Compiladores
+# Compiladores 
+
+## Aula 2.1 : Revisão de linguagens
   - Gramáticas First e Follow (Gramáticas livres de contexto --> Um símbolo não terminal deriva qualquer sequência não terminal.
 
   - Uma gramática é uma quádrupla ordenada composta por:
@@ -16,4 +18,15 @@
   ## INICIADORES
     - 1) Pega os primeiros elementos não terminais de cada regra
     - 2) As regras que relacionarem um A --> B , os iniciadores de A é a união de {} U First(B).
+    
+
+## Aula 2.2 - Análise sintática
+  - Enquanto a analise léxica se preocupa com identificar lexemas e enquadrá-los em tokens, um analisador sintático se preocupa em analisar o conjunto de lexemas válidos e concluir se eles formam uma expressão válida e reconhecida pela gramática. Se preocupa com a sequência de símbolos válidos.
+  - Utiliza estruturas de dados: recursivas e árvores
+  - Derivação : é o processo de substituir símbolos não terminais por terminais, existindo duas classificações:
+      - Derivação pela esquerda: Começa substituindo o não terminal mais a esquerda.
+      - Derivação pela direita: Começa substituindo o não terminal mais a direita.
+  - Por ser a segunda etapa, o analisador léxico realizou o trabalho de conferir se os caracteres são válidos. Agora, é a vez do analisador sintático analisar se as expressões formadas são válidas. Isso será realizado através de uma varredura. O melhor caminho para realizá-la é utilizando AFD's. Existem duas categorias de varredura:
+      - Ascendente/bottom up: Inicia a partir das folhas em direção à raiz --> Parte dos símbolos terminais e tenta adivinhar o não terminal que gerou aquela cadeia.
+      - Descendente/Top Down :Inicia na raíz da árvore e segue para as folhas --> Parte dos símbolos inicial e tenta adivinhar qual das regras aplicar a partir dos símbolos lidos.
     
