@@ -17,7 +17,8 @@
 
   ## INICIADORES
     - 1) Pega os primeiros elementos não terminais de cada regra
-    - 2) As regras que relacionarem um A --> B , os iniciadores de A é a união de {} U First(B).
+    - 2) As regras que relacionarem um A --> B , os iniciadores de A é a união de {} U First(B).<img width="517" height="331" alt="image" src="https://github.com/user-attachments/assets/b752161a-aa9b-4722-9110-4e48bce2d235" />
+
     
 
 ## Aula 2.2 - Análise sintática
@@ -28,5 +29,8 @@
       - Derivação pela direita: Começa substituindo o não terminal mais a direita.
   - Por ser a segunda etapa, o analisador léxico realizou o trabalho de conferir se os caracteres são válidos. Agora, é a vez do analisador sintático analisar se as expressões formadas são válidas. Isso será realizado através de uma varredura. O melhor caminho para realizá-la é utilizando AFD's. Existem duas categorias de varredura:
       - Ascendente/bottom up: Inicia a partir das folhas em direção à raiz --> Parte dos símbolos terminais e tenta adivinhar o não terminal que gerou aquela cadeia.
+        ![Up<img width="517" height="331" alt="Derivação Topdown" src="https://github.com/user-attachments/assets/03846eec-d002-4074-ba6e-57c9e1a382f0" />
+
+
       - Descendente/Top Down :Inicia na raíz da árvore e segue para as folhas --> Parte dos símbolos inicial e tenta adivinhar qual das regras aplicar a partir dos símbolos lidos.
     
