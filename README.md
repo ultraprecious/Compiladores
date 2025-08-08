@@ -32,7 +32,31 @@
         - <img width="517" height="331" alt="Derivação Topdown" src="https://github.com/user-attachments/assets/03846eec-d002-4074-ba6e-57c9e1a382f0" />
 
 
-      - Descendente/Top Down :Inicia na raíz da árvore e segue para as folhas --> Parte dos símbolos inicial e tenta adivinhar qual das regras aplicar a partir dos símbolos lidos.
+      - (ASD) Descendente/Top Down :Inicia na raíz da árvore e segue para as folhas --> Parte dos símbolos inicial e tenta adivinhar qual das regras aplicar a partir dos símbolos lidos.
         - <img width="534" height="312" alt="image" src="https://github.com/user-attachments/assets/24920b2d-d5cc-40ff-8c76-606deb98c09f" />
+
+  ### Análise Sintática Descendente (ASD) 
+  Existem dois tipos de ASD:
+    - ASD com Retrocesso : Tentativo e erro. Testa diferentes possibilidades de análise sintática de entrada, e caso após a finalização a palavra não foi gerada, retrocede e tenta outros caminhos. É força bruta. É inviável. Regras com recursividade logo à esquerda não são permitidas pois geram loops infinitos.
+    Dá pra melhorar com algumas restrições, de modo a não falhar e ser mais otimizada. Isso pelo fato de ter as restrições de todo o lado direito de uma regra ter que começar com um terminal (não dificultar a escolha da derivaçãp) e não poder ter Não terminais com regras que começam com o mesmo terminal (evitar ambiguidade na escolha). Caso o lado direito começar com um não terminal, seus First() precisam ser disjuntos para evitar ambiguidade também.
+
+  LL(1) : 
+  - Não recursivas à esquerda
+  - Não possuem regras de um Não terminal do lado esquerdo e um mesmo terminal começando alguma regra do lado direito.
+  - Cadeida de entrada Lida da esquerda para direita (Primeiro "L")
+  - Analisador busca derivar da esquerda para direita(Segundo "L")
+  - Um ÚNICO símbolo a frente para determinar qual regra aplicar.
+  - Se for LL(2), as restrições valem, exceto pelo fato de que rpecisa de DOIS símbolos para determinar qual regra a ser aplicada.
+
+- ASD Preditiva: Uma gramática que resolve o problema da recursividade pela esquerda. É possível transformar uma ASD em uma Preditiva através de alguns passos.
+  - <img width="781" height="468" alt="image" src="https://github.com/user-attachments/assets/697702c9-4121-49a9-a660-9242e8d2b1f9" />
+  - <img width="856" height="332" alt="image" src="https://github.com/user-attachments/assets/e7838dde-fcf2-4373-8ad7-b8bcf77d1560" />
+
+  - Dá pra colocar prefixos comuns em evidência:
+  - <img width="801" height="316" alt="image" src="https://github.com/user-attachments/assets/46626ea2-f669-433b-a363-d6fe6dfc8009" />
+
+
+## Análise Preditiva Recursiva
+
 
     
